@@ -1,0 +1,31 @@
+type Query {
+  users: [User!]!
+  items: [Item!]!
+}
+
+type Mutation {
+  addItem(data: AddItemInput!): Item!
+  removeItem(data: AddItemInput!): Item!
+  completeOrder(id: ID!): String!
+}
+
+type Subscription {
+  specialPromo: String!
+}
+
+type User {
+  id: ID!
+  name: String!
+  email: String!
+  cart: [Item!]!
+}
+
+type Item {
+  name: String!
+  price: Float
+}
+
+input AddItemInput {
+  userId: ID!
+  itemName: String!
+}
