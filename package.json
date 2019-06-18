@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon index.ts",
     "tsc": "tsc",
-    "build": "tsc -p . && cp schema.graphql ./build"
+    "build": "tsc -p . && cp schema.graphql ./build",
+    "start": "node ./build/index.js"
   },
   "author": "",
   "license": "ISC",
