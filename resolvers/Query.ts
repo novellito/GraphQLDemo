@@ -9,6 +9,13 @@ const Query = {
       email: user.email
     }));
   },
+  user(parent: any, args: any, ctx: any, info: any) {
+    const foundUser: any = Users.find(user => user.id === args.id);
+    if (!foundUser) {
+      throw new Error('User not found!');
+    }
+    return foundUser;
+  },
   items(parent: any, args: any, ctx: any, info: any) {
     return Items;
   }
